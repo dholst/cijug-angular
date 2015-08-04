@@ -5,16 +5,16 @@
   <link rel="stylesheet" href="lib/bootstrap.css">
   <link rel="stylesheet" href="src/app.css">
 </head>
-<body ng-app="cijug" ng-cloak ng-controller="MyFirstController">
+<body ng-app="cijug" ng-cloak ng-controller="MyFirstController as vm">
 
   <form class="form-inline">
     <div class="form-group">
       <label for="your-name">What's your name?</label>
-      <input type="text" class="form-control" id="your-name" ng-model="name">
+      <input type="text" class="form-control" id="your-name" ng-model="vm.name">
     </div>
   </form>
 
-  <span ng-if="name">Hello {{name}}</span>
+  <span ng-if="vm.name">Hello {{vm.name}}</span>
 
   <script src="lib/angular.js"></script>
   <script src="src/app.js"></script>

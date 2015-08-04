@@ -23,7 +23,9 @@
     .controller('MyFirstController', MyFirstController);
 
   function MyFirstController($scope, defaultName) {
-    $scope.name = defaultName;
+    var vm = this;
+
+    vm.name = defaultName;
   }
 
 })();
