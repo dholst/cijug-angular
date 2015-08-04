@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>cijug</title>
+  <link rel="stylesheet" href="lib/bower_components/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="src/app.css">
+</head>
+
+
+
+<body ng-app="cijug" ng-cloak>
+  <div ui-view></div>
+  <script src="lib/bower_components/lodash/lodash.js"></script>
+  <script src="lib/bower_components/angular/angular.js"></script>
+  <script src="lib/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+  <script src="src/routing.js"></script>
+
+  <script id="home.html" type="text/ng-template">
+    <div>Choose your adventure:</div>
+
+    <ul>
+      <li ng-repeat="framework in vm.frameworks"><a ui-sref="framework({id: framework.id})">{{framework.name}}</a></li>
+    </ul>
+  </script>
+
+  <script id="framework.html" type="text/ng-template">
+    <h1>{{vm.framework.name}}</h1>
+    <img ng-if="vm.framework.lol" src="http://www.troll.me/images/bert/lolwut.jpg">
+    <h2 ng-if="!vm.framework.lol">Nice</h2>
+  </script>
+</body>
+
+
+
+</html>

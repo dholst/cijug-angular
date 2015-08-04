@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>cijug</title>
+  <link rel="stylesheet" href="lib/bower_components/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="src/app.css">
+</head>
+
+
+
+<body ng-app="cijug" ng-controller="DirectiveDemoController as vm" ng-cloak>
+  <funnel-direction current-direction="vm.funnelDirection"></funnel-direction>
+  <div>Current Direction: {{vm.funnelDirection}}</div>
+
+  <script src="lib/bower_components/lodash/lodash.js"></script>
+  <script src="lib/bower_components/angular/angular.js"></script>
+  <script src="src/directives.js"></script>
+
+  <script id="funnelDirection.html" type="text/ng-template">
+    <div class="btn-group">
+      <button ng-class="{'active' : vm.isUp()}" ng-click="vm.goUp()" class="btn btn-toggle"><i class="glyphicon glyphicon-chevron-up"></i></button>
+      <button ng-class="{'active' : vm.isDown()}" ng-click="vm.goDown()" class="btn btn-toggle"><i class="glyphicon glyphicon-chevron-down"></i></button>
+    </div>
+  </script>
+</body>
+
+
+
+</html>

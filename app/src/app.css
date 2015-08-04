@@ -10,3 +10,8 @@ body {
 .answer {
     font-family: monospace;
 }
+
+button:focus,
+button:active {
+    outline: none !important;
+}
