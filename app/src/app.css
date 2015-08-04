@@ -2,3 +2,7 @@ body {
     padding: 40px;
     font-size: 2em;
 }
+
+[ng-cloak] {
+    display: none;
+}
