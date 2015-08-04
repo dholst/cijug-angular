@@ -5,8 +5,14 @@ module.exports = function(config){
 
     files : [
       'app/lib/bower_components/angular/angular.js',
+      'app/lib/bower_components/angular-ui-router/release/angular-ui-router.js',
       'app/lib/bower_components/angular-mocks/angular-mocks.js',
-      'app/src/**/*.js',
+      'app/src/app.js',
+      'app/src/notSoSmartWhyController.js',
+      'app/src/shrug.js',
+      'app/src/whyController.js',
+      'app/src/whyControllerUsingScope.js',
+      'app/src/whyService.js',
       'app/spec/**/*.spec.js'
     ],
 

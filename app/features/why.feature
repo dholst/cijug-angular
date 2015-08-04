@@ -1,7 +1,7 @@
 Feature: Can answer the question on everyone's mind
 
   Background:
-    Given I'm on the 5th example page
+    Given I'm on the "controller-service" page
 
   Scenario: when the question is angular
     When I enter "Angular" for the framework

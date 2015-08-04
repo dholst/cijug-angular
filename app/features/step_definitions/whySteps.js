@@ -1,6 +1,6 @@
 module.exports = function () {
-  this.Given(/^I'm on the (\d+)th example page$/, function (number) {
-    browser.get('/0' + number + '.html');
+  this.Given(/^I'm on the "([^"]*)" page$/, function (page) {
+    browser.get(page + '.html');
   });
 
   this.When(/^I enter "([^"]*)" for the framework$/, function (framework) {
