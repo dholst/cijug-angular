@@ -6,3 +6,7 @@ body {
 [ng-cloak] {
     display: none;
 }
+
+.answer {
+    font-family: monospace;
+}

@@ -9,8 +9,8 @@
 
 <form name="why" ng-controller="WhyController as vm" ng-submit="vm.answerMe()">
   <div class="form-group control-label">
-    <label>What framework would you like to discuss?</label>
-    <input type="text" class="form-control" ng-model="vm.framework">
+    <label for="framework">What framework would you like to discuss?</label>
+    <input id="framework" type="text" class="form-control" ng-model="vm.framework">
   </div>
 
   <div class="form-group">
@@ -23,7 +23,7 @@
 </form>
 
 <script src="lib/bower_components/angular/angular.js"></script>
-<script src="src/cijug.js"></script>
+<script src="src/app.js"></script>
 <script src="src/whyController.js"></script>
 </body>
 </html>

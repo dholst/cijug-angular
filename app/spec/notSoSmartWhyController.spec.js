@@ -4,10 +4,13 @@ describe('NotSoSmartWhyController', function () {
   var $controller;
 
   describe('no stubbing', function () {
+    var SHRUG;
+
     beforeEach(module('cijug'));
 
-    beforeEach(inject(function (_$controller_) {
+    beforeEach(inject(function (_$controller_, _SHRUG_) {
       $controller = _$controller_;
+      SHRUG = _SHRUG_;
     }));
 
     it('should give me an answer', function () {
@@ -16,7 +19,7 @@ describe('NotSoSmartWhyController', function () {
 
       controller.answerMe();
 
-      expect(controller.answer).to.eql('because');
+      expect(controller.answer).to.eql(SHRUG);
     });
   });
 
@@ -26,8 +29,8 @@ describe('NotSoSmartWhyController', function () {
     beforeEach(module('cijug', function($provide) {
       getAnswerForStub = sinon.stub().returns("STUBBED ANSWER!");
 
-      $provide.value('answerService', {
-        getAnswerFor: (getAnswerForStub = getAnswerForStub)
+      $provide.value('whyService', {
+        getAnswerFor: getAnswerForStub
       });
     }));
 
@@ -49,18 +52,18 @@ describe('NotSoSmartWhyController', function () {
 
   describe('stubbing an existing function', function () {
     var sandbox;
-    var answerService;
+    var whyService;
 
     beforeEach(module('cijug'));
 
-    beforeEach(inject(function (_$controller_, _answerService_) {
+    beforeEach(inject(function (_$controller_, _whyService_) {
       $controller = _$controller_;
-      answerService = _answerService_;
+      whyService = _whyService_;
     }));
 
     beforeEach(function () {
       sandbox = sinon.sandbox.create();
-      sandbox.stub(answerService, 'getAnswerFor').returns('another stubbed answer');
+      sandbox.stub(whyService, 'getAnswerFor').returns('another stubbed answer');
     });
 
     afterEach(function () {
@@ -75,7 +78,7 @@ describe('NotSoSmartWhyController', function () {
       controller.answerMe();
 
       expect(controller.answer).to.eql('another stubbed answer');
-      expect(answerService.getAnswerFor).to.have.been.calledWith('angular');
+      expect(whyService.getAnswerFor).to.have.been.calledWith('angular');
     });
   });
 

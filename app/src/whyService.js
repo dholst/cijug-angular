@@ -3,15 +3,16 @@
 
   angular
     .module('cijug')
-    .factory('answerService', answerService);
+    .factory('whyService', whyService);
 
-  function answerService() {
+  function whyService(SHRUG) {
     return {
       getAnswerFor: getAnswerFor
     };
 
     function getAnswerFor(question) {
-      return 'because';
+      question = question || '';
+      return question.match(/angular/i) ? 'Google' : SHRUG;
     }
   }
 })();

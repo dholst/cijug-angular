@@ -5,13 +5,13 @@
     .module('cijug')
     .controller('NotSoSmartWhyController', NotSoSmartWhyController);
 
-  function NotSoSmartWhyController(answerService) {
+  function NotSoSmartWhyController(whyService) {
     var vm = this;
 
     vm.answerMe = answerMe;
 
     function answerMe() {
-      vm.answer = answerService.getAnswerFor(vm.framework);
+      vm.answer = whyService.getAnswerFor(vm.framework);
     }
   }
 })();
