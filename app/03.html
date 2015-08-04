@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>cijug</title>
+  <link rel="stylesheet" href="lib/bower_components/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="src/app.css">
+</head>
+<body ng-app="cijug" ng-cloak>
+
+<form name="why" ng-controller="WhyController as vm" ng-submit="vm.answerMe()">
+  <div class="form-group control-label">
+    <label>What framework would you like to discuss?</label>
+    <input type="text" class="form-control" ng-model="vm.framework">
+  </div>
+
+  <div class="form-group">
+    <button type="submit" ng-if="vm.framework" class="btn btn-success btn-lg">Why is {{vm.framework}} so popular?</button>
+  </div>
+
+  <div class="form-group" ng-if="vm.answer">
+    <h1>{{vm.answer}}</h1>
+  </div>
+</form>
+
+<script src="lib/bower_components/angular/angular.js"></script>
+<script src="src/cijug.js"></script>
+<script src="src/whyController.js"></script>
+</body>
+</html>

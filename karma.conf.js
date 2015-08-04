@@ -16,7 +16,8 @@ module.exports = function(config){
       'chai',
       'mocha',
       'sinon',
-      'sinon-chai'
+      'sinon-chai',
+      'dirty-chai'
     ],
 
     browsers : [
@@ -25,6 +26,7 @@ module.exports = function(config){
 
     plugins : [
       'karma-chai',
+      'karma-dirty-chai',
       'karma-mocha',
       'karma-phantomjs-launcher',
       'karma-chrome-launcher',
